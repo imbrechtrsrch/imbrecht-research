@@ -1,0 +1,1159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Imbrecht Research — Independent Equity &amp; Macro Research</title>
+<meta name="description" content="Imbrecht Research publishes independent equity, macro, and market-structure research: deep dives, valuation frameworks, and coverage lists.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%88%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b1220;
+  --bg-panel:#101a2c;
+  --bg-panel-2:#0d1626;
+  --bg-card-hover:#142138;
+  --border:#1f2b42;
+  --border-soft:#182338;
+  --text:#e8ecf6;
+  --text-dim:#9aa7c2;
+  --text-faint:#5f6d8c;
+  --accent:#c9a35a;
+  --accent-soft:#8a733f;
+  --accent-2:#7fb0a0;
+  --positive:#57a17e;
+  --negative:#c46a52;
+  --serif:'Fraunces', Georgia, 'Times New Roman', serif;
+  --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono:'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+  --maxw:920px;
+}
+*{box-sizing:border-box;}
+html{background:var(--bg);}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:var(--sans); font-size:16px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;}
+img{max-width:100%;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+.eyebrow{
+  font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--accent); font-weight:500;
+}
+
+/* ---------- header ---------- */
+header.site{
+  position:sticky; top:0; z-index:50;
+  background:rgba(11,18,32,.88); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border-soft);
+}
+.header-inner{
+  max-width:var(--maxw); margin:0 auto; padding:16px 24px;
+  display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+}
+.wordmark{
+  font-family:var(--serif); font-weight:600; font-size:19px; letter-spacing:.02em;
+  text-decoration:none; color:var(--text); display:flex; align-items:baseline; gap:8px;
+}
+.wordmark .dot{color:var(--accent);}
+nav.primary{display:flex; gap:4px; flex-wrap:wrap;}
+nav.primary a{
+  text-decoration:none; color:var(--text-dim); font-size:14px; font-weight:500;
+  padding:8px 14px; border-radius:6px; transition:color .15s, background .15s;
+}
+nav.primary a:hover{color:var(--text); background:var(--bg-panel);}
+nav.primary a.active{color:var(--accent); background:var(--bg-panel);}
+
+/* ---------- footer ---------- */
+footer.site{
+  border-top:1px solid var(--border-soft); margin-top:96px;
+  padding:40px 0 56px; color:var(--text-faint); font-size:13px;
+}
+footer.site .wrap{display:flex; flex-direction:column; gap:14px;}
+footer.site .disclaimer{
+  color:var(--text-dim); line-height:1.6; max-width:720px;
+}
+footer.site .foot-row{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:center;}
+footer.site a{color:var(--accent-2); text-decoration:none;}
+footer.site a:hover{text-decoration:underline;}
+
+/* ---------- routes ---------- */
+main{min-height:60vh;}
+.route{display:none; animation:fade .25s ease;}
+.route.active{display:block;}
+@keyframes fade{from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);}}
+
+/* ---------- home ---------- */
+.hero{padding:76px 0 56px; border-bottom:1px solid var(--border-soft);}
+.hero h1{
+  font-family:var(--serif); font-weight:600; font-size:44px; line-height:1.12; margin:18px 0 20px;
+  max-width:11ch;
+}
+.hero p.lede{font-size:18px; color:var(--text-dim); max-width:58ch; line-height:1.65;}
+.hero .cta-row{margin-top:28px; display:flex; gap:12px; flex-wrap:wrap;}
+.btn{
+  display:inline-block; text-decoration:none; font-size:14px; font-weight:600;
+  padding:11px 20px; border-radius:7px; transition:transform .15s, background .15s, border-color .15s;
+}
+.btn-primary{background:var(--accent); color:#1a1408;}
+.btn-primary:hover{background:#d8b46c;}
+.btn-ghost{border:1px solid var(--border); color:var(--text);}
+.btn-ghost:hover{border-color:var(--accent-soft); color:var(--accent);}
+
+.section{padding:56px 0;}
+.section-head{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:28px; gap:12px; flex-wrap:wrap;}
+.section-head h2{font-family:var(--serif); font-weight:600; font-size:24px; margin:0;}
+.section-head .see-all{font-size:13px; color:var(--accent-2); text-decoration:none; white-space:nowrap;}
+.section-head .see-all:hover{text-decoration:underline;}
+
+.card-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+@media(max-width:700px){.card-grid{grid-template-columns:1fr;}}
+.report-card{
+  display:block; text-decoration:none; color:var(--text);
+  background:var(--bg-panel); border:1px solid var(--border); border-radius:12px;
+  padding:24px; transition:border-color .15s, background .15s, transform .15s;
+}
+.report-card:hover{border-color:var(--accent-soft); background:var(--bg-card-hover); transform:translateY(-2px);}
+.report-card .tags{display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap;}
+.tag{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
+  padding:4px 9px; border-radius:5px; border:1px solid var(--border); color:var(--text-dim);
+}
+.tag.equity{color:var(--accent); border-color:var(--accent-soft);}
+.tag.screen{color:var(--accent-2); border-color:#2c4a42;}
+.report-card h3{font-family:var(--serif); font-size:21px; margin:0 0 10px; font-weight:600; line-height:1.3;}
+.report-card p{color:var(--text-dim); font-size:14.5px; margin:0 0 14px; line-height:1.55;}
+.report-card .meta{font-family:var(--mono); font-size:11.5px; color:var(--text-faint);}
+
+.principles{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+@media(max-width:700px){.principles{grid-template-columns:1fr;}}
+.principle .num{font-family:var(--mono); color:var(--accent); font-size:12px; margin-bottom:10px;}
+.principle h4{font-family:var(--serif); font-size:17px; margin:0 0 8px; font-weight:600;}
+.principle p{color:var(--text-dim); font-size:14px; margin:0; line-height:1.6;}
+
+/* ---------- generic page header for about / reports / report pages ---------- */
+.page-head{padding:56px 0 32px; border-bottom:1px solid var(--border-soft);}
+.page-head h1{font-family:var(--serif); font-size:36px; font-weight:600; margin:14px 0 12px;}
+.page-head p.lede{color:var(--text-dim); font-size:16.5px; max-width:64ch; line-height:1.65;}
+
+/* ---------- about ---------- */
+.disclaimer-box{
+  margin-top:40px; padding:22px 24px; border:1px solid var(--border); border-left:3px solid var(--accent);
+  border-radius:8px; background:var(--bg-panel);
+}
+.disclaimer-box h3{font-family:var(--serif); font-size:16px; margin:0 0 10px; color:var(--accent); font-weight:600;}
+.disclaimer-box p{color:var(--text-dim); font-size:14px; line-height:1.65; margin:0 0 10px;}
+.disclaimer-box p:last-child{margin-bottom:0;}
+.about-block{padding:8px 0 36px;}
+.about-block h2{font-family:var(--serif); font-size:21px; font-weight:600; margin:0 0 12px;}
+.about-block p{color:var(--text-dim); font-size:15px; line-height:1.7; margin:0 0 14px;}
+.contact-row{display:flex; gap:20px; flex-wrap:wrap; margin-top:8px;}
+.contact-row a{color:var(--accent-2); text-decoration:none; font-size:14.5px;}
+.contact-row a:hover{text-decoration:underline;}
+
+/* ---------- reports index ---------- */
+.reports-list{display:flex; flex-direction:column; gap:16px; padding:40px 0 60px;}
+
+/* ---------- report page ---------- */
+.report-meta-bar{
+  display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin:16px 0 6px;
+}
+.report-meta-bar .tag{border-color:var(--border);}
+.report-title{font-family:var(--serif); font-size:34px; font-weight:600; line-height:1.2; margin:6px 0 10px;}
+.report-sub{color:var(--text-faint); font-size:14px; font-style:italic; margin:0 0 8px;}
+.back-link{
+  display:inline-flex; align-items:center; gap:6px; text-decoration:none; color:var(--text-dim);
+  font-size:13.5px; margin-bottom:22px;
+}
+.back-link:hover{color:var(--accent);}
+
+.report-body{padding:20px 0 60px; max-width:100%;}
+.report-body h2{
+  font-family:var(--serif); font-size:24px; font-weight:600; margin:44px 0 16px; padding-top:8px;
+  border-top:1px solid var(--border-soft);
+}
+.report-body h2:first-child{border-top:none; margin-top:0;}
+.report-body h3{font-family:var(--serif); font-size:18px; font-weight:600; margin:28px 0 12px; color:var(--text);}
+.report-body p{color:var(--text-dim); font-size:15px; line-height:1.75; margin:0 0 16px;}
+.report-body strong{color:var(--text); font-weight:600;}
+.report-body em{color:var(--text-faint);}
+.report-body ul, .report-body ol{color:var(--text-dim); font-size:15px; line-height:1.75; padding-left:22px; margin:0 0 16px;}
+.report-body li{margin-bottom:8px;}
+.report-body li strong{color:var(--text);}
+.report-body hr{border:none; border-top:1px solid var(--border-soft); margin:40px 0;}
+.report-body a{color:var(--accent-2); text-decoration:none; border-bottom:1px solid rgba(127,176,160,.35);}
+.report-body a:hover{border-bottom-color:var(--accent-2);}
+
+.table-scroll{overflow-x:auto; margin:0 0 22px; border:1px solid var(--border-soft); border-radius:8px;}
+table.data-table{border-collapse:collapse; width:100%; font-size:13.5px; min-width:480px;}
+table.data-table th, table.data-table td{
+  padding:10px 14px; text-align:left; border-bottom:1px solid var(--border-soft); white-space:nowrap;
+}
+table.data-table thead th{
+  font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.04em;
+  color:var(--accent); background:var(--bg-panel-2); white-space:nowrap;
+}
+table.data-table tbody tr:hover{background:var(--bg-panel);}
+table.data-table td{color:var(--text-dim);}
+table.data-table tr:last-child td{border-bottom:none;}
+
+.sources-note{
+  margin-top:8px; padding:16px 18px; background:var(--bg-panel-2); border:1px solid var(--border-soft);
+  border-radius:8px; font-size:12.5px; color:var(--text-faint); line-height:1.6;
+}
+
+@media(max-width:600px){
+  .hero h1{font-size:32px; max-width:none;}
+  .page-head h1{font-size:28px;}
+  .report-title{font-size:26px;}
+  .report-body h2{font-size:20px;}
+  .principles{gap:18px;}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="header-inner">
+    <a href="#/" class="wordmark" data-nav>IMBRECHT<span class="dot">·</span>RESEARCH</a>
+    <nav class="primary">
+      <a href="#/" data-route-link="home">Home</a>
+      <a href="#/reports" data-route-link="reports">Reports</a>
+      <a href="#/about" data-route-link="about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ HOME ============ -->
+  <section class="route" id="route-home" data-route="home">
+    <div class="hero">
+      <span class="eyebrow">Independent Research · Est. 2026</span>
+      <h1>Equity &amp; macro research, built in the open.</h1>
+      <p class="lede">Imbrecht Research publishes independent deep dives, valuation frameworks, and market-structure notes on public companies and macro themes — sourced transparently, updated as new data lands, and written for people who want the reasoning, not just the conclusion.</p>
+      <div class="cta-row">
+        <a href="#/reports" class="btn btn-primary">Read the research →</a>
+        <a href="#/about" class="btn btn-ghost">About &amp; methodology</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head">
+        <h2>Latest research</h2>
+        <a href="#/reports" class="see-all">View all reports →</a>
+      </div>
+      <div class="card-grid">
+        <a href="#/reports/novo-nordisk" class="report-card">
+          <div class="tags"><span class="tag equity">Equity · Deep Dive</span><span class="tag">Pharma</span></div>
+          <h3>Novo Nordisk (NVO): pricing the U.S. reset against the international obesity engine</h3>
+          <p>A full teardown of the GLP-1 leader's 2026 collapse in guidance visibility — CagriSema's pipeline stumbles, the 2027 U.S. pricing cliff, and why the Lilly multiple gap is the number the market is really debating.</p>
+          <div class="meta">Aug 26, 2026 · NVO / NOVO-B.CO</div>
+        </a>
+        <a href="#/reports/biotech-robotics-shortlist" class="report-card">
+          <div class="tags"><span class="tag screen">Coverage List</span><span class="tag">Biotech · Robotics</span></div>
+          <h3>Biotech &amp; robotics: a public-company shortlist organized by valuation method</h3>
+          <p>27 names sorted by where they sit in their lifecycle — from cash-flow-positive DCF candidates to pure pipeline/rNPV plays — built as a starting point for hands-on valuation modeling.</p>
+          <div class="meta">Aug 26, 2026 · Screening note</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2>How this research is built</h2></div>
+      <div class="principles">
+        <div class="principle">
+          <div class="num">01</div>
+          <h4>Primary sources first</h4>
+          <p>Every figure is traced to a filing, transcript, or named outlet — every report ends with a full source list, not a vague "industry data" footnote.</p>
+        </div>
+        <div class="principle">
+          <div class="num">02</div>
+          <h4>Explicit about uncertainty</h4>
+          <p>When guidance is unreliable or a model input is genuinely unknown, the report says so and shows the range, instead of forcing false precision.</p>
+        </div>
+        <div class="principle">
+          <div class="num">03</div>
+          <h4>Built for modeling</h4>
+          <p>Reports are structured around the inputs a valuation model actually needs — segment splits, catalysts, and risk factors — not just narrative.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="route" id="route-about" data-route="about">
+    <div class="page-head">
+      <span class="eyebrow">About</span>
+      <h1>Independent research, published transparently.</h1>
+      <p class="lede">Imbrecht Research is an independent equity and macro research publication. It exists to build a public, dated track record of rigorous company and market analysis — the kind of work usually done inside a research seat, done here in the open.</p>
+    </div>
+
+    <div class="about-block" style="padding-top:36px;">
+      <h2>What this is</h2>
+      <p>Each report on this site is a structured research note: a company deep dive, a macro theme, or a screening list built to support valuation modeling. Reports draw on public filings, earnings calls, and reputable financial media, and are dated so readers can judge them against what happened afterward.</p>
+
+      <h2>Methodology</h2>
+      <p>Figures are cross-checked against primary sources (annual reports, regulatory filings, investor presentations) wherever possible, and every report closes with a full, linked source list. Where visibility is genuinely low — shifting guidance, unresolved litigation, pending regulatory decisions — the report says so explicitly rather than smoothing over it with a single confident number.</p>
+
+      <h2>Who's behind it</h2>
+      <p>Imbrecht Research is written and maintained by Manuel Bello, an economist focused on equity research and investing. This site is a working record of that research practice — feedback, corrections, and coverage requests are welcome.</p>
+
+      <div class="contact-row">
+        <a href="mailto:manuel.bello@imbrechtresearch.com">manuel.bello@imbrechtresearch.com</a>
+      </div>
+    </div>
+
+    <div class="disclaimer-box">
+      <h3>Disclaimer</h3>
+      <p>Imbrecht Research is an independent publication produced for educational and informational purposes only. Nothing on this site constitutes investment, legal, or tax advice, or a recommendation or solicitation to buy or sell any security. All content reflects the author's own analysis at the time of publication, may contain errors, and should not be relied upon as the sole basis for any investment decision.</p>
+      <p>Figures, prices, and estimates are sourced from public information believed to be reliable but are not independently audited and may become outdated. Always confirm current data and consult a licensed financial, tax, or legal professional before making investment decisions.</p>
+    </div>
+  </section>
+
+  <!-- ============ REPORTS INDEX ============ -->
+  <section class="route" id="route-reports" data-route="reports">
+    <div class="page-head">
+      <span class="eyebrow">Reports</span>
+      <h1>All research</h1>
+      <p class="lede">Deep dives, valuation frameworks, and coverage lists — newest first.</p>
+    </div>
+
+    <div class="reports-list">
+      <a href="#/reports/novo-nordisk" class="report-card">
+        <div class="tags"><span class="tag equity">Equity · Deep Dive</span><span class="tag">Pharma</span></div>
+        <h3>Novo Nordisk (NVO): pricing the U.S. reset against the international obesity engine</h3>
+        <p>A full teardown of the GLP-1 leader's 2026 collapse in guidance visibility — CagriSema's pipeline stumbles, the 2027 U.S. pricing cliff, and why the Lilly multiple gap is the number the market is really debating.</p>
+        <div class="meta">Aug 26, 2026 · NVO / NOVO-B.CO</div>
+      </a>
+      <a href="#/reports/biotech-robotics-shortlist" class="report-card">
+        <div class="tags"><span class="tag screen">Coverage List</span><span class="tag">Biotech · Robotics</span></div>
+        <h3>Biotech &amp; robotics: a public-company shortlist organized by valuation method</h3>
+        <p>27 names sorted by where they sit in their lifecycle — from cash-flow-positive DCF candidates to pure pipeline/rNPV plays — built as a starting point for hands-on valuation modeling.</p>
+        <div class="meta">Aug 26, 2026 · Screening note</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ REPORT: NOVO NORDISK ============ -->
+  <section class="route" id="route-report-novo" data-route="reports/novo-nordisk">
+    <div class="page-head" style="padding-bottom:0; border-bottom:none;">
+      <a href="#/reports" class="back-link">← All reports</a>
+      <div class="report-meta-bar">
+        <span class="tag equity">Equity · Deep Dive</span>
+        <span class="tag">Pharma</span>
+        <span class="tag">NVO / NOVO-B.CO</span>
+      </div>
+      <h1 class="report-title">Novo Nordisk A/S — Deep Research Report</h1>
+      <p class="report-sub">Prepared for Imbrecht Research — August 26, 2026. Base for valuation model construction. Not investment advice.</p>
+    </div>
+    <div class="report-body">
+      <hr />
+<h2>1. Executive Summary</h2>
+<p>Novo Nordisk is the Danish pharmaceutical company behind Ozempic, Wegovy, and Rybelsus — the drugs that created the modern GLP-1 obesity and diabetes market. For most of 2022–2024 it was one of the most successful pharma stories in history, briefly becoming Europe's most valuable listed company. Since December 2024, however, the stock has been in a severe drawdown (down roughly 56% from its all-time high), triggered by a sequence of pipeline disappointments, a leadership change, intensifying competition from Eli Lilly, and — most recently — a historic U.S. pricing reset that will cut list prices on Wegovy (~50%) and Ozempic (~35%) starting January 2027.</p>
+<p>The core investment tension for a valuation model: Novo still has industry-leading margins, a dominant international (ex-US) obesity franchise, and a deep pipeline (amycretin, next-gen CagriSema formulations, oral options), but its U.S. business — the highest-margin market — is being squeezed simultaneously by Lilly's Zepbound/orforglipron, compounded and self-pay competition, a new Most-Favored-Nation (MFN) pricing deal with the Trump administration, Medicare IRA negotiated pricing (effective 2027), and the loss of exclusive PBM formulary status at CVS Caremark (effective October 2026). Management has issued and then twice revised 2026 guidance in the same year, underscoring how much visibility has been lost. This is a name where the modeling exercise is less "extrapolate the trend" and more "explicitly model the U.S. price/volume/mix collision" against a still-strong ex-U.S. growth story.</p>
+<hr />
+<h2>2. Company Overview</h2>
+<ul>
+<li><strong>Founded:</strong> 1923 (Copenhagen, Denmark), formed from the 1989 merger of Nordisk Insulinlaboratorium and Novo Terapeutisk Laboratorium.</li>
+<li><strong>Headquarters:</strong> Bagsværd, Denmark.</li>
+<li><strong>Listing:</strong> Primary listing on Nasdaq Copenhagen (NOVO-B.CO); ADRs trade on the NYSE (NVO), each ADR = 1 B share.</li>
+<li><strong>Core focus:</strong> "Focused healthcare company" — diabetes care, obesity care, and rare disease (hemophilia, growth disorders, rare endocrine conditions).</li>
+<li><strong>Employees:</strong> roughly 78,000+ globally (manufacturing concentrated in Kalundborg, Denmark, plus sites in the U.S., France, Brazil, China, and elsewhere).</li>
+<li><strong>Manufacturing base:</strong> Kalundborg, Denmark is the largest single site and the primary API (active pharmaceutical ingredient) source for semaglutide; the company has also been rapidly building U.S. capacity (including the 2024 acquisition of three Catalent fill-finish sites, funded by parent Novo Holdings, and subsequently transferred to Novo Nordisk).</li>
+</ul>
+<h3>Segments</h3>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Segment</th>
+<th>FY2025 Revenue (DKK bn)</th>
+<th>YoY Growth (reported / CER)</th>
+<th>Share of Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Diabetes Care</td>
+<td>207.1</td>
+<td>flat / +4%</td>
+<td>~67%</td>
+</tr>
+<tr>
+<td>Obesity Care</td>
+<td>82.3</td>
+<td>+26% / +31%</td>
+<td>~27%</td>
+</tr>
+<tr>
+<td>Rare Disease</td>
+<td>19.6</td>
+<td>+5% / +9%</td>
+<td>~6%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>309.1</strong></td>
+<td><strong>+6% / +10%</strong></td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+<p>Key products: Ozempic and Rybelsus (semaglutide, diabetes), Wegovy (semaglutide, obesity — injectable, higher-dose, and now oral pill formulations), NovoLog/NovoRapid and Tresiba/Levemir (insulins), Victoza/Saxenda (older GLP-1s, largely cannibalized by semaglutide), and a rare-disease portfolio including Rebinyn/NovoSeven (hemophilia) and Norditropin (growth hormone).</p>
+<hr />
+<h2>3. Ownership &amp; Governance Structure</h2>
+<p>Novo Nordisk has an unusual, highly relevant-to-valuation ownership structure:</p>
+<ul>
+<li><strong>Novo Nordisk Foundation</strong> (a Danish charitable foundation) wholly owns <strong>Novo Holdings A/S</strong>, which in turn holds essentially all of Novo Nordisk's <strong>A shares</strong> — unlisted shares that legally cannot be sold and carry <strong>100 votes each</strong>.</li>
+<li><strong>B shares</strong> are the publicly traded class (NYSE ADRs and Nasdaq Copenhagen), carrying <strong>10 votes each</strong>.</li>
+<li>Through this structure, the Foundation/Novo Holdings controls roughly <strong>three-quarters of the voting power</strong> despite owning a minority of total capital — meaning public shareholders have essentially no path to a takeover, activist restructuring, or hostile control change. This is a structural feature to flag in any valuation write-up: capital allocation, M&amp;A, and strategic pivots are ultimately governed by a foundation with a dual commercial/philanthropic mandate, not by a normal dispersed shareholder base.</li>
+<li>In late 2025, this structure became a live governance issue: shareholders publicly pushed back on a board revamp ahead of a November 2025 vote, reflecting investor frustration with the pace of the company's response to its problems.</li>
+</ul>
+<hr />
+<h2>4. Leadership</h2>
+<ul>
+<li><strong>Mike (Maziar) Doustdar</strong> became President &amp; CEO on <strong>August 7, 2025</strong>, succeeding <strong>Lars Fruergaard Jørgensen</strong>, whose exit was announced amid mounting share-price pressure and board concern that the company needed to "address recent market challenges with speed and ambition" (per Chair Helge Lund). Doustdar was promoted internally from EVP of International Operations, where sales under his purview had roughly doubled to ~$17B by 2024.</li>
+<li>Under Doustdar, R&amp;D and early development were consolidated into a single unit under a new Chief Scientific Officer, <strong>Martin Holst Lange</strong>.</li>
+<li>A former CEO was brought back onto the <strong>board</strong> in the same period — part of a broader leadership reset.</li>
+<li>Additional senior turnover disclosed alongside the August 2026 guidance cut: <strong>Dave Moore</strong> (EVP, U.S. operations) departing, replaced by <strong>Jamey Millar</strong> (ex-CEO of Optum Specialty Holdings, UnitedHealth Group); <strong>Ludovic Helfgott</strong> (EVP, product &amp; portfolio strategy) departing, replaced by <strong>Hong Chow</strong> (ex-Merck KGaA China/international operations head).</li>
+</ul>
+<p>For a valuation model, this level of C-suite churn in under 18 months (CEO, CSO reorganization, head of U.S. commercial, head of product strategy) is itself a qualitative risk factor — execution and strategic continuity cannot be taken for granted.</p>
+<hr />
+<h2>5. Financial Performance</h2>
+<h3>FY2025 (full year)</h3>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Metric</th>
+<th>FY2025</th>
+<th>YoY</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Revenue</td>
+<td>DKK 309.1bn</td>
+<td>+6% reported / +10% CER</td>
+</tr>
+<tr>
+<td>Operating profit</td>
+<td>DKK 127.7bn</td>
+<td>-1% reported / +6% CER</td>
+</tr>
+<tr>
+<td>Net profit</td>
+<td>DKK 102.4bn</td>
+<td>+1%</td>
+</tr>
+<tr>
+<td>Diluted EPS</td>
+<td>DKK 23.03</td>
+<td>+2%</td>
+</tr>
+<tr>
+<td>Gross margin</td>
+<td>81.0%</td>
+<td>down from 84.7% in 2024</td>
+</tr>
+<tr>
+<td>R&amp;D spend</td>
+<td>DKK 52.0bn (16.8% of sales)</td>
+<td>+8% / +10% CER</td>
+</tr>
+<tr>
+<td>Free cash flow</td>
+<td>DKK 28.3bn</td>
+<td>vs. <strong>–DKK 14.7bn</strong> in 2024 (large swing, capex-driven)</td>
+</tr>
+<tr>
+<td>Capex</td>
+<td>DKK 90.1bn (60.1bn PP&amp;E + 30.0bn intangibles)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<p>Geographic growth (CER): U.S. +8%, International +14%, APAC +25% — international and APAC materially outgrowing the U.S. even before the 2026 U.S. deceleration.</p>
+<h3>2026 Guidance — a moving target</h3>
+<p>Guidance has already been revised <strong>twice</strong> in 2026, which is itself a key data point about visibility:</p>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Guidance vintage</th>
+<th>Adjusted sales growth (CER)</th>
+<th>Adjusted operating profit growth (CER)</th>
+<th>Free cash flow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initial FY2026 guide (given ~Feb 2026, alongside FY2025 results)</td>
+<td>–5% to –13%</td>
+<td>–5% to –13%</td>
+<td>DKK 35–45bn</td>
+</tr>
+<tr>
+<td>Revised at Q1 2026 (May 2026)</td>
+<td>–4% to –12%</td>
+<td>–4% to –12%</td>
+<td>(raised, implied)</td>
+</tr>
+<tr>
+<td>Revised at Q2 2026 (August 2026)</td>
+<td><strong>0% to –6%</strong></td>
+<td><strong>0% to –6%</strong></td>
+<td><strong>DKK 45–55bn</strong> (raised DKK 9bn)</td>
+</tr>
+</tbody>
+</table></div>
+<p>The initial guidance cut (Feb 2026) triggered a &gt;15% single-day share-price plunge (with trading briefly halted) — a rare, severe reaction even by pharma standards, and reportedly Novo's worst single-day drop in decades.</p>
+<h3>Q1 2026 highlights</h3>
+<ul>
+<li>Reported sales DKK 96.8bn; <strong>adjusted</strong> sales down ~4% CER (reported growth was inflated by one-offs/FX).</li>
+<li>U.S. adjusted sales down ~11% CER; International +6% CER (EUCAN +23%, APAC +22%, but China –10% and other emerging markets –18%).</li>
+<li>Adjusted gross margin compressed to 80.6% from 83.5%.</li>
+<li>U.S. gross-to-net rebates elevated at ~70% of gross sales.</li>
+<li>Wegovy pill launch: 1M+ U.S. patients; weekly injectable Wegovy scripts ~475,000.</li>
+</ul>
+<h3>Q2 2026 highlights (reported August 4, 2026) — the most important quarter to model closely</h3>
+<ul>
+<li>Adjusted sales +7%, adjusted operating profit +11% — but <strong>reported</strong> operating profit fell 19% and reported EPS fell 20%, due to <strong>DKK 6.3bn of pipeline write-offs</strong> (see Section 6).</li>
+<li>Adjusted gross margin fell further to <strong>78.2%</strong> (from 82.7% a year earlier) — the <strong>fifth consecutive quarterly decline</strong>; ~3.8 points of the 4.5-point drop was a one-time DKK 3bn manufacturing "right-sizing" charge.</li>
+<li><strong>U.S. Wegovy injectable revenue fell 22% at constant currency</strong> even as weekly scripts rose to ~310,000 (from ~280,000) — a stark volume/revenue divergence.</li>
+<li><strong>Wegovy pill captured ~90% of the U.S. oral GLP-1 market</strong>, with 5 million total prescriptions in its first six months — a genuine commercial win.</li>
+<li>Self-pay now represents <strong>35% of injectable Wegovy volume</strong> (up from 10–15% a year earlier) at materially lower net prices — margin-dilutive mix shift.</li>
+<li>International obesity sales +37% CER; Wegovy injectable international +46%.</li>
+<li>Rare disease posted an operating <strong>loss</strong> of DKK 1.3bn (vs. a DKK 518m profit a year earlier).</li>
+<li>U.S. GLP-1 diabetes sales showed almost no underlying growth once a DKK 2bn one-time favorable rebate credit is stripped out; independent analysis noted that normalizing for the rebate credit and deferred spend, <strong>adjusted operating profit actually went backwards</strong> quarter-over-quarter.</li>
+<li>Management's own framing, as characterized by analysts: "Novo is converting a booming market into almost no revenue growth" — U.S. branded obesity category volume grew ~87% while Novo's U.S. obesity revenue rose only ~4%.</li>
+</ul>
+<p><strong>Bottom line for modeling:</strong> the reported "beat and raise" in Q2 2026 was partly a function of one-time items (rebate credits, deferred spend, deferred tax) that a careful model should back out before extrapolating a recovery trend.</p>
+<h3>Current valuation snapshot (as of Aug 25, 2026)</h3>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Share price (NYSE ADR)</td>
+<td>$48.66</td>
+</tr>
+<tr>
+<td>Market cap</td>
+<td>~$212.5B (down ~16.5% over the trailing period)</td>
+</tr>
+<tr>
+<td>Trailing P/E</td>
+<td>~11.9x</td>
+</tr>
+<tr>
+<td>Forward P/E</td>
+<td>~15.6x</td>
+</tr>
+<tr>
+<td>NTM EV/EBITDA</td>
+<td>~9.0x</td>
+</tr>
+<tr>
+<td>LTM EBIT margin</td>
+<td>~45.5%</td>
+</tr>
+<tr>
+<td>Dividend yield</td>
+<td>~2.6–4.2% (sources vary by trailing/forward basis)</td>
+</tr>
+<tr>
+<td>Revenue (TTM, USD)</td>
+<td>~$50.3B (+5.6%)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Peer comparison (approx., varies by source/date):</strong></p>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Company</th>
+<th>P/E</th>
+<th>EV/EBITDA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Novo Nordisk</td>
+<td>~12x</td>
+<td>~9.0x</td>
+</tr>
+<tr>
+<td>Eli Lilly</td>
+<td>~26x</td>
+<td>~20.7x</td>
+</tr>
+<tr>
+<td>Roche</td>
+<td>—</td>
+<td>~10.8x</td>
+</tr>
+<tr>
+<td>Novartis</td>
+<td>—</td>
+<td>~13.3x</td>
+</tr>
+</tbody>
+</table></div>
+<p>Novo trades at roughly half Eli Lilly's multiple despite comparable or better margins — the central bull-case data point — but the discount reflects genuinely worse near-term growth visibility, not just sentiment.</p>
+<h3>Analyst sentiment</h3>
+<ul>
+<li>Consensus rating has drifted from mostly Strong Buy/Buy in early 2026 to a <strong>Hold-dominated</strong> picture by August 2026: ~14 analysts, 3 Strong Buy / 0 Buy / 11 Hold (vs. 4 Strong Buy / 1 Buy in March 2026).</li>
+<li>Price targets: average ~$47.5 (roughly in line with/slightly below spot), high ~$64.5, low ~$40.5, median ~$45.5.</li>
+<li>Recent action: Berenberg downgraded to Hold (price target cut from $50 to $47, Aug 12 2026); JPMorgan raised its target to DKK 275 around the same period — illustrating a genuinely split view.</li>
+<li>One independent bottom-up valuation (TIKR) modeled a 2030 fair-value range of ~$64 (mid case, ~57% total return) to ~$118 (high case), arguing the stock already prices in a scenario more bearish than their own conservative case — but flagged oral Wegovy adoption and the Lilly competitive dynamic as the key swing factors.</li>
+</ul>
+<h3>Capital returns</h3>
+<ul>
+<li>Novo runs an active <strong>share buyback program</strong>: a DKK 15 billion buyback program has been running through 2026 with regular weekly repurchase disclosures (treasury shares reached ~0.8% of capital by mid-2026).</li>
+<li>Dividend: historically a semi-annual dividend with steady growth; yield in the mid-single digits on a trailing basis given the share price decline (treat reported yields with care since sources disagree — confirm against the latest annual report before modeling).</li>
+</ul>
+<hr />
+<h2>6. Pipeline &amp; R&amp;D</h2>
+<h3>The CagriSema saga (central narrative arc)</h3>
+<p>CagriSema (cagrilintide + semaglutide, a GLP-1/amylin dual agonist) was positioned as Novo's key next-generation obesity answer to Lilly's tirzepatide (Zepbound/Mounjaro).</p>
+<ul>
+<li><strong>December 2024:</strong> Phase 3 (REDEFINE 1) data showed ~22.7% mean weight loss — strong in absolute terms, but well short of the ~25%+ the market expected and below some earlier trial signals. Novo shares fell ~20–22% in a single session; Lilly shares rose on the read-across. This is widely regarded as the moment sentiment turned on the stock.</li>
+<li>Subsequent trials continued to disappoint: management was criticized for trying to "boost CagriSema sentiment without hard numbers" in the aftermath.</li>
+<li><strong>Q2 2026:</strong> CagriSema <strong>failed non-inferiority against tirzepatide on blood-sugar control</strong> in the REIMAGINE 4 trial — a further setback, even as newer data (presented at ADA 2026) showed CagriSema achieving ~22.7% mean weight loss in other contexts, illustrating the drug is still viable but no longer a clear best-in-class claim.</li>
+</ul>
+<h3>Other Q2 2026 pipeline setbacks (three in one quarter)</h3>
+<ul>
+<li><strong>Ziltivekimab</strong> (anti-inflammatory, cardiovascular) missed its cardiovascular outcomes trial.</li>
+<li><strong>Monlunabant</strong> was terminated outright, triggering a <strong>DKK 4 billion impairment</strong>.</li>
+<li>Combined with CagriSema's REIMAGINE 4 miss, these three events drove the <strong>DKK 6.3bn in pipeline write-offs</strong> that hit reported Q2 2026 earnings.</li>
+</ul>
+<h3>Forward pipeline — the bull case assets</h3>
+<ul>
+<li><strong>Amycretin</strong> (a GLP-1/amylin co-agonist with both injectable and oral formulations) has been <strong>advanced into Phase 3</strong> for obesity after strong Phase 2 data, and is increasingly framed by sell-side commentary as "the drug Novo was really waiting for" — potentially a more differentiated next-gen asset than CagriSema.</li>
+<li><strong>Oral semaglutide (Wegovy pill / branded internationally)</strong>: a genuine commercial success — ~90% share of the nascent U.S. oral GLP-1 market and rapid uptake (5 million U.S. scripts in six months); Novo also secured <strong>European approval for oral Wegovy</strong>, which management is using to argue it retains a lead over Lilly in oral obesity therapy even after Lilly's pill was approved.</li>
+<li><strong>Zenagamtide</strong> and other cardiometabolic pipeline assets were also featured in new ADA 2026 data alongside CagriSema, indicating a broader pipeline than the single-asset narrative suggests.</li>
+</ul>
+<p><strong>Modeling implication:</strong> the pipeline should be modeled with explicit probability-of-success weighting (rNPV) for late-stage but not-yet-approved assets (amycretin) rather than assumed as base-case revenue, given the track record of disappointments in this exact pipeline over the past 18 months.</p>
+<hr />
+<h2>7. Competitive Landscape</h2>
+<ul>
+<li><strong>Eli Lilly (LLY)</strong> is the central competitive threat, with tirzepatide (Zepbound for obesity, Mounjaro for diabetes) and now <strong>orforglipron</strong> (brand name Foundayo), an oral small-molecule GLP-1 that received <strong>FDA approval in April 2026</strong> — a significant milestone since it is easier to manufacture at scale and distribute than peptide-based injectables.</li>
+<li>Coverage frames 2026 explicitly as "the year of obesity pills" from both companies, with competing claims about who has the "real" pill: Novo emphasizes oral Wegovy's approval breadth (including in Europe) and current ~90% U.S. oral-market share; Lilly's orforglipron reportedly had a somewhat underwhelming initial data readout on some efficacy/tolerability measures but is seen as retaining a structural manufacturing/cost advantage given its small-molecule chemistry.</li>
+<li><strong>Formulary/distribution risk:</strong> CVS Caremark, a major U.S. pharmacy benefit manager, will <strong>add competing weight-loss medications to its largest commercial formulary effective October 1, 2026</strong>, ending a period of relatively favorable/exclusive positioning for Novo's products with that PBM — a concrete, dated catalyst to model as a step-down in U.S. obesity net pricing/volume.</li>
+<li><strong>Compounded/self-pay competition:</strong> telehealth and compounding-pharmacy-sourced semaglutide (and knockoffs) proliferated during the 2022–2024 supply shortage era; Novo has pursued aggressive litigation (including suits against telehealth players such as Hims &amp; Hers) and won a court decision restricting compounders from producing semaglutide knockoffs once the FDA removed semaglutide from its drug-shortage list. Despite this, <strong>self-pay now accounts for ~35% of injectable Wegovy volume</strong>, suggesting price-sensitive demand has structurally shifted toward lower-priced channels rather than disappearing.</li>
+<li><strong>Patent cliff, staggered by geography:</strong> semaglutide's patents begin expiring in 2026 in a group of large but lower-priced markets — <strong>India, Canada, China, Brazil, Turkey</strong> (collectively ~40% of world population, ~33% of the world's adults with obesity) — while U.S. and other major-market patents run into the <strong>early 2030s</strong>. India and China already show intense generic pipeline activity (10+ companies in India, 17+ candidates in China progressing toward Phase 3/registration), meaning international ex-U.S. growth — the current bright spot — will itself face generic erosion on a market-by-market basis starting in 2026, well before the U.S. patent cliff.</li>
+</ul>
+<hr />
+<h2>8. Policy &amp; Regulatory Environment (the biggest swing factor for U.S. revenue)</h2>
+<p>Three distinct U.S. policy/pricing events are converging and should be modeled as explicit, dated step-changes rather than smoothed into a growth rate:</p>
+<ol>
+<li><strong>"Most Favored Nation" (MFN) deal with the Trump administration</strong> (announced ~November 2025): Novo agreed to price Ozempic/Wegovy at <strong>$245/month</strong> for Medicare and Medicaid, and <strong>$350/month</strong> through a new government direct-purchase platform, <strong>TrumpRx</strong> (launching 2026) — down from list prices of roughly $1,000 (Ozempic) and $1,350 (Wegovy). Insulin products (NovoLog, Tresiba) are capped at <strong>$35/month</strong>. In exchange, Novo received a <strong>3-year tariff exemption</strong> and a commitment that all future medicines will carry MFN-equivalent pricing. Medicare will, for the first time, cover Wegovy (and Lilly's Zepbound) for obesity-related indications, with a <strong>$50/month patient co-pay</strong> under a pilot program.</li>
+<li><strong>Medicare Drug Price Negotiation (Inflation Reduction Act)</strong>: Ozempic/semaglutide was selected in the <strong>second round</strong> of IRA negotiations; the negotiated Medicare price is <strong>$274/month vs. a $959/month list price (~71% discount)</strong>, effective <strong>2027</strong>.</li>
+<li><strong>Company-initiated list price cuts</strong>: Novo has separately announced it will cut <strong>U.S. list prices ~50% for Wegovy and ~35% for Ozempic starting January 2027</strong> — a direct company response to the above pressures and to accelerate volume/access.</li>
+</ol>
+<p>Layered together, <strong>2027 is the year U.S. list pricing resets dramatically downward across nearly every payer channel</strong> — commercial MFN/TrumpRx, Medicare/Medicaid MFN, IRA-negotiated Medicare pricing, and voluntary list cuts. A valuation model should treat FY2026 as a transition year and build FY2027 U.S. revenue explicitly bottom-up (price × volume × channel mix) rather than applying a blended growth rate off FY2025.</p>
+<hr />
+<h2>9. Manufacturing &amp; Capital Investment</h2>
+<ul>
+<li>Novo has been running one of the largest capex programs in pharma history to catch up with GLP-1 demand: roughly <strong>DKK 40bn invested 2021–2022</strong>, a further <strong>DKK 42bn (~$6B) committed in November 2023</strong> for a new API facility in Kalundborg (170,000 sqm, completing in phases from late 2025 through 2029, +800 jobs), and total 2025 capex of <strong>DKK 90.1bn</strong>.</li>
+<li>2026 guided capex is lower, around <strong>DKK 55bn</strong>, and the company disclosed a one-time <strong>DKK 3bn manufacturing "right-sizing" charge</strong> in Q2 2026 — a signal that after several years of aggressive capacity build-out, Novo is now also rationalizing/optimizing that footprint, consistent with a slower demand-growth outlook than what capex was originally sized for.</li>
+<li>U.S. capacity was also bolstered via three former Catalent fill-finish sites acquired in 2024 (originally via parent Novo Holdings, then transferred into Novo Nordisk) to build a U.S.-based supply chain — relevant both for U.S. political/tariff risk and for the previously binding manufacturing constraint on Wegovy volumes.</li>
+</ul>
+<hr />
+<h2>10. Key Risks (for a risk-adjusted valuation / sensitivity table)</h2>
+<ol>
+<li><strong>U.S. pricing collapse across all payer channels from 2027</strong> (MFN/TrumpRx, IRA-negotiated Medicare price, voluntary list cuts) — the single largest identified swing factor.</li>
+<li><strong>Share loss to Eli Lilly</strong> in both injectable (tirzepatide) and oral (orforglipron) obesity/diabetes markets, compounded by the CVS Caremark formulary change (Oct 2026).</li>
+<li><strong>Self-pay/compounded-channel mix shift</strong> structurally lowering average net price even where volume grows.</li>
+<li><strong>Pipeline execution risk</strong> — three major late-stage failures in Q2 2026 alone (ziltivekimab, monlunabant, CagriSema/REIMAGINE 4) demonstrate this is not hypothetical.</li>
+<li><strong>Patent cliff staggered by geography</strong>, with generic semaglutide arriving in large ex-U.S. markets (India, China, Canada, Brazil, Turkey) starting 2026 — directly threatening the international growth engine currently offsetting U.S. weakness.</li>
+<li><strong>Leadership/organizational instability</strong> — CEO change, CSO reorganization, and departures of the heads of U.S. operations and product strategy all within about a year.</li>
+<li><strong>Governance/control structure</strong> — Foundation control via super-voting A shares limits the influence of public shareholders and rules out conventional M&amp;A-driven upside or activist-forced strategic change.</li>
+<li><strong>Margin compression</strong> — five consecutive quarters of adjusted gross margin decline (84.7% FY2024 → 81.0% FY2025 → 78.2% in Q2 2026), driven by rebates, self-pay mix, and one-time manufacturing charges; whether this stabilizes or continues declining is a critical model assumption.</li>
+<li><strong>Currency (DKK/USD and other FX)</strong> — a meaningful share of reported vs. constant-exchange-rate growth divergence in every quarter reviewed; model in CER terms and convert explicitly.</li>
+<li><strong>Guidance reliability</strong> — two guidance revisions within a single fiscal year (both quarters trending less negative, i.e., "better than feared," but starting from a very low bar) signal genuinely reduced management/analyst visibility, which argues for wider scenario bands rather than a single-point forecast.</li>
+</ol>
+<h2>11. Key Catalysts to Watch</h2>
+<ul>
+<li>Amycretin Phase 3 readouts (obesity and diabetes).</li>
+<li>Further data disclosures on CagriSema's positioning post-REIMAGINE 4.</li>
+<li>Q3/Q4 2026 earnings — whether the "beat and raise" pattern continues or whether the one-time rebate/tax tailwinds that flattered Q2 2026 reverse as management itself flagged.</li>
+<li>Actual U.S. list price cuts taking effect January 2027, and how payers/PBMs respond.</li>
+<li>CVS Caremark formulary change effective October 1, 2026, and subsequent read on Novo's U.S. obesity volumes/share.</li>
+<li>Any further leadership changes under CEO Doustdar's now ~1-year tenure.</li>
+<li>Generic semaglutide launches in India/China/Canada/Brazil/Turkey through 2026–2027 and their effect on "International" segment growth.</li>
+</ul>
+<hr />
+<h2>12. Suggested Valuation Framework</h2>
+<p>Given everything above, a few modeling recommendations specific to this name:</p>
+<ul>
+<li><strong>Segment the model at minimum into U.S. Obesity, International Obesity, Diabetes (U.S. vs. International), and Rare Disease</strong> — blending these hides the entire investment story, which is a U.S.-vs-international and price-vs-volume divergence.</li>
+<li><strong>Model gross-to-net (rebates) and self-pay mix explicitly</strong> rather than a single blended net price — this is currently the single biggest driver of the gap between headline volume growth and actual revenue growth in the U.S.</li>
+<li><strong>Treat FY2027 as a discrete "reset" year</strong> for U.S. pricing given three converging, dated policy/pricing changes, rather than smoothing a CAGR through it.</li>
+<li><strong>Use rNPV/probability-weighting for pipeline value</strong> (amycretin, next-gen CagriSema uses) given the realized track record of Phase 3 disappointments; do not treat pipeline assets as base-case revenue.</li>
+<li><strong>Cross-check against Eli Lilly</strong> as the primary comp — the ~12x vs. ~26x P/E and ~9x vs. ~21x EV/EBITDA gap is the central number the market is debating, and a DCF or comps-based fair value should explicitly state whether it argues the gap is justified (structurally worse growth/competitive position) or overdone (excellent margins, international strength, deep pipeline optionality).</li>
+<li><strong>Sensitize free cash flow to capex normalization</strong> — capex fell from a FY2025 peak of DKK 90bn toward a guided ~DKK 55bn in 2026 alongside a manufacturing right-sizing charge; FCF guidance (DKK 45–55bn for 2026) is highly sensitive to both capex phasing and the margin trajectory above.</li>
+</ul>
+<hr />
+<h2>Sources</h2>
+<ul>
+<li><a href="https://annualreport.novonordisk.com/2025/strategic-aspirations/financial-performance.html">Novo Nordisk Annual Report 2025 — Financial Performance</a></li>
+<li><a href="https://www.novonordisk.com/content/dam/nncorp/global/en/investors/irmaterial/annual_report/2026/novo-nordisk-annual-report-2025.pdf">Novo Nordisk Annual Report 2025 (PDF)</a></li>
+<li><a href="https://www.investing.com/news/company-news/novo-nordisk-q1-2026-slides-obesity-growth-offsets-diabetes-pressure-93CH-4663381">Novo Nordisk Q1 2026 slides: obesity growth offsets diabetes pressure — Investing.com</a></li>
+<li><a href="https://finsee.ai/earnings/nvo/2026/q2/en/">Novo Nordisk Q2 2026 earnings review — Finsee</a></li>
+<li><a href="https://www.fiercepharma.com/pharma/novo-shares-plummet-sales-profit-warning-26">Novo Nordisk shares plummet on sales, profit warning for '26 as 2 top execs head for the door — Fierce Pharma</a></li>
+<li><a href="https://www.cnbc.com/2026/02/04/novo-nordisk-stock-ceo-earnings-guidance-ozempic-wegovy.html">Novo Nordisk stock tumbles: CEO says it will get worse before it gets better — CNBC</a></li>
+<li><a href="https://www.cnbc.com/2026/08/05/novo-nordisk-stock-guidance-earnings-wegovy-ozempic-eli-lilly.html">Novo Nordisk CEO defends economics of Wegovy pill as lower prices weigh on sales; shares fall 5% — CNBC</a></li>
+<li><a href="https://stockanalysis.com/stocks/nvo/">Novo Nordisk (NVO) Stock Price &amp; Overview — StockAnalysis.com</a></li>
+<li><a href="https://stockanalysis.com/stocks/nvo/forecast/">Novo Nordisk (NVO) Stock Forecast &amp; Analyst Price Targets — StockAnalysis.com</a></li>
+<li><a href="https://www.tikr.com/blog/novo-nordisk-has-fallen-56-from-its-high-is-nvo-finally-cheap-enough-to-buy-in-2026">Novo Nordisk Has Fallen 56% From Its High. Is NVO Finally Cheap Enough to Buy in 2026? — TIKR</a></li>
+<li><a href="https://www.pharmexec.com/view/novo-nordisk-maziar-mike-doustdar-president-ceo">Novo Nordisk Names Maziar Mike Doustdar as President and CEO — PharmExec</a></li>
+<li><a href="https://www.cnbc.com/amp/2025/11/14/novo-nordisks-strategy-tested-as-investors-push-back-on-board-revamp.html">Novo Nordisk's leadership strategy tested as shareholders push back on board revamp — CNBC</a></li>
+<li><a href="https://www.novonordisk.com/investors/stock-information/share-and-ownership-structure.html">Share and ownership structure of Novo Nordisk</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Novo_Nordisk_Foundation">Novo Nordisk Foundation — Wikipedia</a></li>
+<li><a href="https://www.statnews.com/2024/12/20/novo-nordisk-cagrisema-obesity-drug-market-impact/">Novo Nordisk's disappointing CagriSema trial results — STAT News</a></li>
+<li><a href="https://www.cnbc.com/2024/12/20/novo-nordisk-shares-plunge-22percent-after-cagrisema-obesity-drug-trial-results.html">Novo Nordisk shares plunge 20% after disappointing trial results; Lilly jumps — CNBC</a></li>
+<li><a href="https://www.prnewswire.com/news-releases/novo-nordisk-advances-cardiometabolic-pipeline-with-new-data-featuring-cagrisema-and-zenagamtide-at-the-american-diabetes-associations-2026-scientific-sessions-302783110.html">Novo Nordisk advances cardiometabolic pipeline with new CagriSema/zenagamtide data at ADA 2026 — PR Newswire</a></li>
+<li><a href="https://www.fiercebiotech.com/biotech/novo-nordisk-expands-pivotal-amycretin-program-after-dual-agonist-shines-diabetes">Novo Nordisk expands pivotal amycretin program after dual agonist shines in diabetes — Fierce Biotech</a></li>
+<li><a href="https://www.biospace.com/fda/eli-lillys-oral-obesity-pill-approved-kicking-off-renewed-novo-rivalry">Eli Lilly's Oral Obesity Pill Approved, Kicking Off Renewed Novo Rivalry — BioSpace</a></li>
+<li><a href="https://www.pharmaceutical-technology.com/news/novo-secures-european-approval-for-oral-wegovy-to-extend-lead-over-lilly/">Novo secures European approval for oral Wegovy to extend lead over Lilly — Pharmaceutical Technology</a></li>
+<li><a href="https://www.ajmc.com/view/trump-announces-deals-with-eli-lilly-novo-nordisk-for-lower-weight-loss-drug-prices">Trump Announces Deals With Lilly, Novo to Cut Weight Loss Drug Prices — AJMC</a></li>
+<li><a href="https://www.fiercepharma.com/pharma/medicare-unveils-price-reductions-15-drugs-including-novos-semaglutide">Medicare unveils price reductions for 15 drugs, including Novo's semaglutide — Fierce Pharma</a></li>
+<li><a href="https://www.cnbc.com/2025/01/17/medicare-drug-price-negotiations-list-includes-ozempic.html">Ozempic is in the next round of Medicare drug price negotiations — CNBC</a></li>
+<li><a href="https://www.iqvia.com/locations/emea/blogs/2025/07/off-patent-semaglutide">Off-patent semaglutide in 2026: the next revolution in anti-obesity medications — IQVIA</a></li>
+<li><a href="https://www.morningbrew.com/stories/2026/03/20/generic-ozempic-india-china">Ozempic generics to enter China, India after Novo patents expire — Morning Brew</a></li>
+<li><a href="https://www.fiercepharma.com/pharma/us-court-decision-prevents-compounders-producing-knockoffs-novo-nordisks-semaglutide">US court decision stops compounders from making knockoffs of Novo Nordisk's semaglutide — Fierce Pharma</a></li>
+<li><a href="https://www.fiercepharma.com/manufacturing/novo-nordisk-devotes-6b-expanding-production-ozempic-wegovy-ceo-indicates-more-come">Novo invests $6B as CEO indicates more expansion to come — Fierce Pharma</a></li>
+<li><a href="https://www.tipranks.com/news/company-announcements/novo-nordisk-details-progress-of-2026-share-buyback-programme-2">Novo Nordisk Details Progress of 2026 Share Buyback Programme — TipRanks</a></li>
+</ul>
+    </div>
+  </section>
+
+  <!-- ============ REPORT: BIOTECH & ROBOTICS ============ -->
+  <section class="route" id="route-report-biotech" data-route="reports/biotech-robotics-shortlist">
+    <div class="page-head" style="padding-bottom:0; border-bottom:none;">
+      <a href="#/reports" class="back-link">← All reports</a>
+      <div class="report-meta-bar">
+        <span class="tag screen">Coverage List</span>
+        <span class="tag">Biotech · Robotics</span>
+      </div>
+      <h1 class="report-title">Biotech &amp; Robotics: Public Company Shortlist for Valuation Modeling</h1>
+      <p class="report-sub">Prepared for Imbrecht Research — August 26, 2026.</p>
+    </div>
+    <div class="report-body">
+      <p>This list groups candidates by valuation profile rather than just "best," since the right modeling approach (DCF, comps, or pipeline/rNPV) depends heavily on where a company sits in its lifecycle. Market caps and prices move fast — confirm current figures before building any model. This is not investment advice; it's a working list to pick modeling subjects from.</p>
+<hr />
+<h2>Biotech</h2>
+<h3>Large-cap, cash-flow-positive (best for classic DCF)</h3>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Company</th>
+<th>Ticker</th>
+<th>Exchange</th>
+<th>Approx. Market Cap</th>
+<th>Why it's a good modeling subject</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vertex Pharmaceuticals</td>
+<td>VRTX</td>
+<td>NASDAQ</td>
+<td>~$140B</td>
+<td>Diversified, profitable pipeline (cystic fibrosis franchise + newer gene therapy/pain assets); clean financials for a standard DCF or comps build.</td>
+</tr>
+<tr>
+<td>Regeneron Pharmaceuticals</td>
+<td>REGN</td>
+<td>NASDAQ</td>
+<td>~$86B</td>
+<td>Mature revenue base (Eylea, Dupixent royalties) with visible R&amp;D pipeline; good for a DCF with sensitivity on patent-cliff timing.</td>
+</tr>
+<tr>
+<td>Novo Nordisk</td>
+<td>NVO</td>
+<td>NYSE (ADR); primary listing Copenhagen (NOVO-B.CO)</td>
+<td>~$216B</td>
+<td>GLP-1 franchise (Ozempic/Wegovy) — useful for a market-share/TAM-driven revenue build and margin analysis.</td>
+</tr>
+<tr>
+<td>BioNTech</td>
+<td>BNTX</td>
+<td>NASDAQ</td>
+<td>~$29B</td>
+<td>Post-COVID diversification into oncology; interesting scenario analysis between "vaccine cash cow winds down" vs. "oncology pipeline delivers."</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Mid-cap growth (good for scenario-based DCF)</h3>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Company</th>
+<th>Ticker</th>
+<th>Exchange</th>
+<th>Approx. Market Cap</th>
+<th>Why it's a good modeling subject</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Axsome Therapeutics</td>
+<td>AXSM</td>
+<td>NASDAQ</td>
+<td>~$11B</td>
+<td>Commercial-stage CNS/pain drugs with high gross margin; good test case for ramp-up revenue modeling on recently launched drugs.</td>
+</tr>
+<tr>
+<td>Exelixis</td>
+<td>EXEL</td>
+<td>NASDAQ</td>
+<td>~$14B</td>
+<td>Oncology (Cabometyx) with strong margins; useful comps case within oncology-focused biotech.</td>
+</tr>
+<tr>
+<td>Mirum Pharmaceuticals</td>
+<td>MIRM</td>
+<td>NASDAQ</td>
+<td>~$6.4B</td>
+<td>Rare-disease commercial stage; smaller, so more sensitive to individual drug assumptions — good for teaching sensitivity tables.</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Small-cap / speculative (better for pipeline or rNPV valuation, not pure DCF)</h3>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Company</th>
+<th>Ticker</th>
+<th>Exchange</th>
+<th>Approx. Market Cap</th>
+<th>Why it's a good modeling subject</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Puma Biotechnology</td>
+<td>PBYI</td>
+<td>NASDAQ</td>
+<td>~$481M</td>
+<td>Single-product-dependent commercial biotech; good for a concentrated revenue-risk case study.</td>
+</tr>
+<tr>
+<td>Precigen</td>
+<td>PGEN</td>
+<td>NASDAQ</td>
+<td>~$2.6B</td>
+<td>Clinical/early-commercial stage gene therapy — forces you to build a probability-weighted (rNPV) pipeline model instead of a standard DCF.</td>
+</tr>
+<tr>
+<td>Fennec Pharmaceuticals</td>
+<td>FENC</td>
+<td>NASDAQ</td>
+<td>~$411M</td>
+<td>Small, newly commercial — good micro-cap case study on unit economics and cash runway.</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Thematic: Gene editing / CRISPR (interesting for pipeline-driven scenario work)</h3>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Company</th>
+<th>Ticker</th>
+<th>Exchange</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CRISPR Therapeutics</td>
+<td>CRSP</td>
+<td>NASDAQ</td>
+<td>Approved gene-editing therapy (Casgevy) plus broader pipeline — good rNPV candidate.</td>
+</tr>
+<tr>
+<td>Intellia Therapeutics</td>
+<td>NTLA</td>
+<td>NASDAQ</td>
+<td>In-vivo CRISPR platform, pre-commercial — pure pipeline/optionality valuation exercise.</td>
+</tr>
+<tr>
+<td>Editas Medicine</td>
+<td>EDIT</td>
+<td>NASDAQ</td>
+<td>Earlier-stage, smaller — illustrates high-uncertainty biotech valuation and dilution risk modeling.</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>Robotics &amp; Automation</h2>
+<h3>Large-cap, diversified (best for comps + DCF)</h3>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Company</th>
+<th>Ticker</th>
+<th>Exchange</th>
+<th>Approx. Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intuitive Surgical</td>
+<td>ISRG</td>
+<td>NASDAQ</td>
+<td>Da Vinci surgical robotics — recurring "razor/razorblade" revenue model (systems + instruments), great for unit-economics modeling.</td>
+</tr>
+<tr>
+<td>Rockwell Automation</td>
+<td>ROK</td>
+<td>NASDAQ</td>
+<td>Industrial automation controls; cyclical end markets, good for a comps set against Emerson/Honeywell/Eaton.</td>
+</tr>
+<tr>
+<td>ABB Ltd</td>
+<td>ABBNY (ADR) / ABBN</td>
+<td>NYSE (ADR) / SIX Swiss Exchange</td>
+<td>Global industrial robotics and automation leader; useful for a cross-listed/FX-adjusted valuation exercise.</td>
+</tr>
+<tr>
+<td>Teradyne</td>
+<td>TER</td>
+<td>NASDAQ</td>
+<td>Semiconductor test equipment + Universal Robots/MiR robotics segment — good example of a "hidden robotics exposure" name inside a broader business.</td>
+</tr>
+<tr>
+<td>Honeywell</td>
+<td>HON</td>
+<td>NASDAQ</td>
+<td>Diversified industrials with automation exposure; large, stable comps anchor.</td>
+</tr>
+<tr>
+<td>NVIDIA</td>
+<td>NVDA</td>
+<td>NASDAQ</td>
+<td>Not a pure-play, but its Isaac/Jetson/GR00T platforms make it the key "enabling technology" name across nearly every robotics thesis.</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Mid-cap pure robotics/automation (good comps set among themselves)</h3>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Company</th>
+<th>Ticker</th>
+<th>Exchange</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cognex</td>
+<td>CGNX</td>
+<td>NASDAQ</td>
+<td>Machine vision — narrow, well-defined business, clean for a focused DCF.</td>
+</tr>
+<tr>
+<td>Novanta</td>
+<td>NOVT</td>
+<td>NASDAQ</td>
+<td>Precision motion components for robotics — supplier-side exposure.</td>
+</tr>
+<tr>
+<td>Zebra Technologies</td>
+<td>ZBRA</td>
+<td>NASDAQ</td>
+<td>Warehouse automation/machine vision hardware.</td>
+</tr>
+<tr>
+<td>Symbotic</td>
+<td>SYM</td>
+<td>NASDAQ</td>
+<td>AI-driven warehouse robotics, high growth/high multiple — good for a growth-story valuation with heavy assumption sensitivity.</td>
+</tr>
+<tr>
+<td>PROCEPT BioRobotics</td>
+<td>PRCT</td>
+<td>NASDAQ</td>
+<td>Surgical robotics (urology) — similar "installed base + consumables" model to Intuitive Surgical, but much earlier stage.</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Small-cap / speculative &amp; autonomy themes</h3>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Company</th>
+<th>Ticker</th>
+<th>Exchange</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Serve Robotics</td>
+<td>SERV</td>
+<td>NASDAQ</td>
+<td>Sidewalk delivery robots — pre-profitability, good for a unit-economics/TAM buildout model.</td>
+</tr>
+<tr>
+<td>UiPath</td>
+<td>PATH</td>
+<td>NYSE</td>
+<td>Robotic Process Automation (software, not physical robots) — useful contrast case (SaaS-style valuation vs. hardware robotics).</td>
+</tr>
+<tr>
+<td>AeroVironment</td>
+<td>AVAV</td>
+<td>NASDAQ</td>
+<td>Defense drones/robotics — good for government-contract revenue modeling.</td>
+</tr>
+<tr>
+<td>Red Cat Holdings</td>
+<td>RCAT</td>
+<td>NASDAQ</td>
+<td>Small-cap defense drone maker — speculative, illustrates dilution/cash-burn modeling.</td>
+</tr>
+<tr>
+<td>Aurora Innovation</td>
+<td>AUR</td>
+<td>NASDAQ</td>
+<td>Autonomous trucking — pre-revenue-at-scale, optionality-heavy valuation case.</td>
+</tr>
+<tr>
+<td>Pony AI</td>
+<td>PONY</td>
+<td>NASDAQ</td>
+<td>Robotaxi/autonomous driving — good comps pairing with Aurora and Kodiak.</td>
+</tr>
+<tr>
+<td>Kodiak AI</td>
+<td>KDK</td>
+<td>NASDAQ</td>
+<td>Autonomous trucking, recently public — another data point for the self-driving comps set.</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Humanoid robotics exposure (thematic, most are indirect)</h3>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Company</th>
+<th>Ticker</th>
+<th>Exchange</th>
+<th>Humanoid Angle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tesla</td>
+<td>TSLA</td>
+<td>NASDAQ</td>
+<td>Optimus humanoid robot program alongside its core EV business — humanoid is optionality on top of an existing valuation, good for a sum-of-the-parts exercise.</td>
+</tr>
+<tr>
+<td>UBTECH Robotics</td>
+<td>9880</td>
+<td>HKEX (Hong Kong)</td>
+<td>Widely cited as the most direct pure-play publicly traded humanoid robot company (Walker S).</td>
+</tr>
+<tr>
+<td>Hyundai Motor</td>
+<td>005380</td>
+<td>KRX (Korea Exchange)</td>
+<td>Parent of Boston Dynamics (Atlas) — humanoid exposure buried inside a large auto manufacturer.</td>
+</tr>
+<tr>
+<td>Xiaomi</td>
+<td>1810</td>
+<td>HKEX (Hong Kong)</td>
+<td>Humanoid platform (CyberOne) as part of a much broader consumer electronics/AI business.</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>Suggested next step for your models</h2>
+<p>A well-rounded first batch that covers different valuation methodologies:
+- <strong>DCF (mature, cash-generative):</strong> Vertex Pharmaceuticals (biotech), Intuitive Surgical (robotics)
+- <strong>Growth DCF with scenarios:</strong> Axsome Therapeutics (biotech), Symbotic (robotics)
+- <strong>rNPV / pipeline valuation:</strong> Intellia Therapeutics or CRISPR Therapeutics (biotech — this is the model type most distinctive to biotech and would stand out on your site)
+- <strong>Comps-heavy, cyclical industrial:</strong> Rockwell Automation vs. ABB vs. Honeywell
+- <strong>Optionality / thematic:</strong> Tesla (Optimus) as a sum-of-the-parts case, or Aurora Innovation for autonomy</p>
+<p>That spread would let each valuation model demonstrate a different technique, which is useful both for the modeling practice itself and as varied content for the site.</p>
+<hr />
+<h3>Sources</h3>
+<ul>
+<li><a href="https://www.fool.com/investing/stock-market/market-sectors/healthcare/biotech-stocks/">5 Best Biotech Stocks for 2026 — The Motley Fool</a></li>
+<li><a href="https://www.wallstreetzen.com/industries/best-biotech-stocks">Best Biotech Stocks to Buy Now (2026) — WallStreetZen</a></li>
+<li><a href="https://investingnews.com/daily/life-science-investing/biotech-investing/top-nasdaq-biotech-stocks/">Top 5 Small-cap Biotech Stocks in 2026 — Investing News Network</a></li>
+<li><a href="https://finance.yahoo.com/healthcare/articles/4-gene-editing-biotech-stocks-135900790.html">4 Gene-Editing Biotech Stocks Worth Watching — Yahoo Finance</a></li>
+<li><a href="https://www.fool.com/investing/stock-market/market-sectors/healthcare/genomics-stocks/crispr-companies/">4 Best CRISPR Companies for 2026 — The Motley Fool</a></li>
+<li><a href="https://www.stocktitan.net/stocks/themes/robotics-stocks">Robotics Stocks 2026: 35+ Automation Companies — StockTitan</a></li>
+<li><a href="https://finance.yahoo.com/markets/stocks/articles/top-robotics-stocks-worth-investing-152000153.html">Top Robotics Stocks Worth Investing in H2 2026 — Yahoo Finance</a></li>
+<li><a href="https://www.fool.com/investing/stock-market/market-sectors/information-technology/robotics-stocks/">8 Best Robotics Stocks to Buy in 2026 — The Motley Fool</a></li>
+<li><a href="https://www.evsint.com/publicly-traded-humanoid-robot-companies-2026-investor-guide/">Publicly Traded Humanoid Robot Companies 2026 Guide — EVS Intelligence</a></li>
+<li><a href="https://standardbots.com/blog/humanoid-robotics-companies">Top 12 Humanoid Robotics Companies to Watch in 2026 — Standard Bots</a></li>
+</ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p class="disclaimer"><strong style="color:var(--text-dim);">Not investment advice.</strong> Imbrecht Research is an independent publication for educational and informational purposes only. See the <a href="#/about">full disclaimer</a> before relying on any figure in these reports.</p>
+    <div class="foot-row">
+      <span>© 2026 Imbrecht Research</span>
+      <a href="mailto:manuel.bello@imbrechtresearch.com">manuel.bello@imbrechtresearch.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var routes = Array.prototype.slice.call(document.querySelectorAll('[data-route]'));
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('[data-route-link]'));
+  var titles = {
+    'home': 'Imbrecht Research — Independent Equity & Macro Research',
+    'about': 'About & Methodology — Imbrecht Research',
+    'reports': 'All Reports — Imbrecht Research',
+    'reports/novo-nordisk': 'Novo Nordisk (NVO) Deep Dive — Imbrecht Research',
+    'reports/biotech-robotics-shortlist': 'Biotech & Robotics Shortlist — Imbrecht Research'
+  };
+  function currentRoute(){
+    var h = (location.hash || '#/').replace(/^#\/?/, '');
+    h = h.replace(/\/$/, '');
+    return h === '' ? 'home' : h;
+  }
+  function render(){
+    var r = currentRoute();
+    var matched = false;
+    routes.forEach(function(sec){
+      if(sec.getAttribute('data-route') === r){ sec.classList.add('active'); matched = true; }
+      else { sec.classList.remove('active'); }
+    });
+    if(!matched){
+      routes.forEach(function(sec){ sec.classList.toggle('active', sec.getAttribute('data-route') === 'home'); });
+    }
+    var navKey = r === 'home' ? 'home' : (r === 'about' ? 'about' : 'reports');
+    navLinks.forEach(function(a){ a.classList.toggle('active', a.getAttribute('data-route-link') === navKey); });
+    document.title = titles[matched ? r : 'home'] || titles.home;
+    window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange', render);
+  render();
+})();
+</script>
+
+</body>
+</html>
